@@ -48,4 +48,18 @@ const fetchUser = async (email) => {
   }
 };
 
-module.exports = { addUser, deleteUser, fetchUser };
+const fetchAllUser = async () =>{
+
+  try {
+    
+    let query = `SELECT * FROM user_info;`
+    const data = await client.query(query)
+
+    return {success:true,data:data.rows}
+
+  } catch (error) {
+    return {success:false,error:error}
+  }
+}
+
+module.exports = { addUser, deleteUser, fetchUser, fetchAllUser };

@@ -7,7 +7,12 @@
 </head>
 <body>
     <div style="text-align: center;">
-        <h1 style="color: red;">Welcome to Home Page</h1>
+        <h1 style="color: red;">Users</h1>
+        <ul>
+            <% user.forEach((user) => { %>
+                <li style="color: blue;"><%= user.name %></li>
+                <% }) %>
+        </ul>
     </div>
 </body>
 </html>
