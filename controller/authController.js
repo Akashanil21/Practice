@@ -1,7 +1,8 @@
 const bcrypt = require("bcrypt");
 const jwt = require("jsonwebtoken");
+const dotenv = require("dotenv").config()
 
-const secret = "mirage21";
+const secret = process.env.JWT_SECRET
 
 const { addUser, deleteUser, fetchUser } = require("../db/authDb");
 
