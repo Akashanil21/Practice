@@ -19,7 +19,6 @@ const registerUser = async (req, res) => {
 
   const existingUser = await fetchUser(email);
 
-  console.log("existing user : ", existingUser);
 
   if (existingUser.success) {
     return res.json("The given email is already registered");
@@ -37,7 +36,8 @@ const registerUser = async (req, res) => {
   const result = await addUser(user);
 
   if (result.success) {
-    return res.status(200).json("user successfully registered");
+    res.redirect('/static/login')
+    //return res.status(200).json("user successfully registered");
   } else {
     return res.status(500).json("error while registering user");
   }

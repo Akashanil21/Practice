@@ -7,7 +7,7 @@ const {registerUser,removeUser,userLogin,userAuthorize} = require("../controller
 
 router.post("/register",registerUser)
 router.delete("/:id",removeUser)
-router.get("/login",userLogin)
+router.post("/login",userLogin)
 router.post("/authorize",userAuthorize)
 
 
