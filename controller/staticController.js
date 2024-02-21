@@ -1,5 +1,4 @@
 
-
 const getSignupPage = (req,res) =>{
 
     res.render('signup')
@@ -10,4 +9,15 @@ const getLoginPage = (req,res) =>{
     res.render('login')
 }
 
-module.exports = {getSignupPage, getLoginPage}
+const getUploadPage = (req,res) =>{
+
+    res.render('upload')
+}
+
+const uploadFile = (req,res) =>{
+
+    res.send("File uploaded successfully")
+
+}
+
+module.exports = {getSignupPage, getLoginPage, getUploadPage, uploadFile}
